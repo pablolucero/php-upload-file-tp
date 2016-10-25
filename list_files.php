@@ -13,27 +13,27 @@
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
 
-    <title>Alta de usuario</title>
+    <title>Lista de archivos</title>
 </head>
 <body>
 <div class="container">
 
+    <h2>Archivos subidos</h2>
     <?php
-    $conexion = mysqli_connect("localhost", "root", "", "usuarios")
-    or die("Problemas en la conexion");
 
+    $target_dir = "uploads/"; // specifies the directory where the files are placed
 
-    $nombre = $_REQUEST['nombre'];
-    $password = $_REQUEST['password'];
+    clearstatcache();  // Limpia la caché de estado de un archivo
 
-
-    mysqli_query($conexion, "insert into users(nombre, password) values ('$nombre','$password')")
-    or die("Problemas en el select" . mysqli_error($conexion));
-    mysqli_close($conexion);
-    echo "<h3>El usuario fue dado de alta.</h3><br>";
+    $archivos = scandir($target_dir);
+    foreach ($archivos as $nombre) {
+        if ($nombre == '.' || $nombre == '..') {
+            continue;
+        } else {
+            echo "<li><a href=\"$target_dir/$nombre\">$nombre</a></li>"; // Armamos el link para la descarga
+        }
+    }
     ?>
-    <a href="login.php" class="btn btn-default">Login</a>
-    <a href="alta_usuario.php" class="btn btn-default">Alta de usuarios</a>
 </div>
 </body>
 </html>
