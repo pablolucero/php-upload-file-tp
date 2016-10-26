@@ -19,7 +19,7 @@
             <input type="text" id="nombre" name="nombre" class="form-control">
             <br>
             <label for="apellido">Apellido:</label>
-            <input type="apellido" id="apellido" name="apellido" class="form-control">
+            <input type="text" id="apellido" name="apellido" class="form-control">
             <br>
         </div>
         <input type="submit" value="Registrar" class="btn btn-primary">
