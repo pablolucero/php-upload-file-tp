@@ -1,29 +1,26 @@
 <html>
 <head>
     <title>Alta Usuario</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
     <h1>Alta de usuario</h1>
-    <form action="paginacargausuario.php" method="post">
+    <form action="persist_usuario.php" method="post">
         <div class="form-group">
-            <label for="nombre">Username:</label>
-            <input type="text" id="nombre" name="nombre" class="form-control">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class="form-control" required>
             <br>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" class="form-control">
+            <input type="password" id="password" name="password" class="form-control" required>
+            <br>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control">
+            <br>
+            <label for="apellido">Apellido:</label>
+            <input type="apellido" id="apellido" name="apellido" class="form-control">
+            <br>
         </div>
         <input type="submit" value="Registrar" class="btn btn-primary">
     </form>
