@@ -33,7 +33,7 @@
     mysqli_close($conexion);
 
     ?>
-    <a href="login.php" class="btn btn-default">Login</a>
+    <a href="index.php" class="btn btn-default">Login</a>
     <a href="alta_usuario.php" class="btn btn-default">Alta de usuarios</a>
 
 </div>
